@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accounting Portfolio | Your Name</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      background:#f5f7fb;
+      color:#1f2937;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+    nav{
+      width:100%;
+      background:white;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-wrapper{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:22px;
+      font-weight:700;
+      color:#1e3a8a;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+    }
+
+    .nav-links a{
+      font-size:15px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#2563eb;
+    }
+
+    /* HERO */
+    .hero{
+      padding-top:140px;
+      padding-bottom:100px;
+      background:linear-gradient(to right,#eff6ff,#dbeafe);
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:50px;
+    }
+
+    .hero-text h1{
+      font-size:52px;
+      line-height:1.1;
+      margin-bottom:20px;
+      color:#111827;
+    }
+
+    .hero-text span{
+      color:#2563eb;
+    }
+
+    .hero-text p{
+      margin-bottom:30px;
+      color:#4b5563;
+      font-size:17px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#2563eb;
+      color:white;
+      padding:14px 28px;
+      border-radius:12px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+      transform:translateY(-2px);
+    }
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:350px;
+      border-radius:24px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* SECTION */
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      margin-bottom:12px;
+      color:#111827;
+    }
+
+    .section-title p{
+      color:#6b7280;
+    }
+
+    /* ABOUT */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+
+    .card{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#1e3a8a;
+    }
+
+    /* SKILLS */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill-box{
+      background:white;
+      padding:28px;
+      border-radius:18px;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .skill-box:hover{
+      transform:translateY(-5px);
+    }
+
+    .skill-box h4{
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+
+    /* SOFTWARE PORTFOLIO */
+    .software-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .software-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .software-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .software-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .software-content{
+      padding:25px;
+    }
+
+    .software-content h3{
+      margin-bottom:10px;
+      color:#1e3a8a;
+    }
+
+    .software-content p{
+      color:#6b7280;
+      font-size:15px;
+      margin-bottom:18px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:7px 14px;
+      background:#dbeafe;
+      color:#1d4ed8;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+      margin-right:8px;
+      margin-top:8px;
+    }
+
+    /* EXPERIENCE */
+    .timeline{
+      position:relative;
+      max-width:800px;
+      margin:auto;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      width:4px;
+      background:#2563eb;
+      top:0;
+      bottom:0;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .timeline-item{
+      padding:20px 40px;
+      position:relative;
+      width:50%;
+    }
+
+    .timeline-item:nth-child(odd){
+      left:0;
+    }
+
+    .timeline-item:nth-child(even){
+      left:50%;
+    }
+
+    .timeline-content{
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    /* CONTACT */
+    .contact-box{
+      max-width:700px;
+      margin:auto;
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .contact-box form{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    input, textarea{
+      padding:15px;
+      border-radius:12px;
+      border:1px solid #d1d5db;
+      font-family:inherit;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:none;
+    }
+
+    button{
+      border:none;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#111827;
+      color:white;
+      text-align:center;
+      padding:30px 0;
+      margin-top:50px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+
+      .hero-content,
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text{
+        text-align:center;
+      }
+
+      .timeline::before{
+        left:20px;
+      }
+
+      .timeline-item{
+        width:100%;
+        padding-left:60px;
+        padding-right:20px;
+      }
+
+      .timeline-item:nth-child(even){
+        left:0;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-wrapper">
+      <div class="logo">Accounting Portfolio</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#software">Software Portfolio</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-text">
+        <h1>Hello, I'm <span>Your Name</span></h1>
+
+        <p>
+          A Management graduate transitioning into Accounting & Finance,
+          passionate about financial reporting, bookkeeping,
+          data accuracy, and accounting software.
+        </p>
+
+        <a href="#" class="btn">Download CV</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Accounting">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>Get to know more about my background and career focus.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="card">
+          <h3>Professional Background</h3>
+
+          <p>
+            I am a fresh graduate with a Bachelor's degree in Management
+            who is interested in building a career in accounting and finance.
+            I have strong attention to detail, analytical thinking,
+            and structured problem-solving abilities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Career Objective</h3>
+
+          <p>
+            My goal is to develop expertise in financial reporting,
+            accounting systems, bookkeeping, and financial analysis while
+            contributing to business efficiency and operational excellence.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Skills</h2>
+        <p>Core competencies and accounting capabilities.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-box">
+          <h4>Financial Reporting</h4>
+          <p>Preparing and analyzing financial statements.</p>
+        </div>
+
+        <div class="skill-box">
+          <h4>Bookkeeping</h4>
+          <p>Recording transactions and maintaining ledgers.</p>
+        </div>
+
+        <div class="skill-box">
+          <h4>Microsoft Excel</h4>
+          <p>Pivot table, VLOOKUP, formulas, and data analysis.</p>
+        </div>
+
+        <div class="skill-box">
+          <h4>Attention to Detail</h4>
+          <p>Ensuring accuracy in financial and operational data.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOFTWARE PORTFOLIO -->
+  <section id="software">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Accounting Software Portfolio</h2>
+        <p>Projects and simulations using accounting systems.</p>
+      </div>
+
+      <div class="software-grid">
+
+        <div class="software-card">
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="Software">
+
+          <div class="software-content">
+            <h3>Mekari Jurnal Project</h3>
+
+            <p>
+              Created a complete accounting simulation including
+              journal entries, inventory management, accounts payable,
+              and financial statement preparation.
+            </p>
+
+            <span class="tag">Mekari Jurnal</span>
+            <span class="tag">Inventory</span>
+            <span class="tag">Financial Report</span>
+          </div>
+        </div>
+
+        <div class="software-card">
+          <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1200&auto=format&fit=crop" alt="Excel">
+
+          <div class="software-content">
+            <h3>Excel Financial Dashboard</h3>
+
+            <p>
+              Built a financial dashboard using Excel to monitor
+              revenue, expenses, profit margin, and monthly cash flow.
+            </p>
+
+            <span class="tag">Excel</span>
+            <span class="tag">Dashboard</span>
+            <span class="tag">Analysis</span>
+          </div>
+        </div>
+
+        <div class="software-card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" alt="Accounting">
+
+          <div class="software-content">
+            <h3>Accounting Cycle Case Study</h3>
+
+            <p>
+              Completed a full accounting cycle simulation from
+              transaction recording to adjusting entries and closing entries.
+            </p>
+
+            <span class="tag">Accounting Cycle</span>
+            <span class="tag">Journal Entry</span>
+            <span class="tag">Ledger</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Experience</h2>
+        <p>Academic and professional journey.</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>PT Bank Mandiri (Persero) Tbk.</h3>
+            <p>Marketing Intern</p>
+            <small>2024</small>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Accounting Bootcamp</h3>
+            <p>
+              Learned accounting software implementation,
+              bookkeeping, and financial reporting practices.
+            </p>
+            <small>2025</small>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact Me</h2>
+        <p>Feel free to connect with me professionally.</p>
+      </div>
+
+      <div class="contact-box">
+
+        <form>
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Your Email">
+          <textarea placeholder="Your Message"></textarea>
+
+          <button class="btn">Send Message</button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Your Name | Accounting Portfolio</p>
+  </footer>
+
+</body>
+</html>
