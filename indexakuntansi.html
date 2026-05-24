@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Accounting Portfolio | Your Name</title>
+  <title>2026 Portfolio | Yogi Fahreza Alfianto</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -169,6 +169,254 @@
       color:#1e3a8a;
     }
 
+/* EDUCATION */
+
+.education-wrapper{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.education-card{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  cursor:pointer;
+  transition:0.35s ease;
+  overflow:hidden;
+  position:relative;
+}
+
+.education-card:hover{
+  transform:translateY(-4px);
+}
+
+/* HEADER */
+
+.education-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.education-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+/* LOGO */
+
+.education-logo{
+  width:55px;
+  height:55px;
+  border-radius:14px;
+  background:#f3f4f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex-shrink:0;
+}
+
+.education-logo img{
+  width:70%;
+  height:70%;
+  object-fit:contain;
+}
+
+/* TEXT */
+
+.education-header h3{
+  margin-bottom:4px;
+  color:#111827;
+}
+
+.education-header p{
+  margin-bottom:2px;
+  color:#4b5563;
+}
+
+.education-header small{
+  color:#6b7280;
+}
+
+/* DETAIL */
+
+.education-detail{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+  margin-top:0;
+  color:#4b5563;
+  font-size:15px;
+}
+
+.education-card.active .education-detail{
+  max-height:300px;
+  margin-top:18px;
+}
+
+/* ARROW */
+
+.education-arrow{
+  font-size:14px;
+  color:#6b7280;
+  transition:0.3s ease;
+}
+
+.education-card.active .education-arrow{
+  transform:rotate(180deg);
+}
+
+/* ACTIVE */
+
+.education-card.active{
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+}
+
+/* EXPERIENCE */
+
+.timeline{
+  position:relative;
+  max-width:1200px;
+  margin:auto;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  width:4px;
+  background:#2563eb;
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:20px 40px;
+}
+
+.timeline-item:nth-child(odd){
+  left:0;
+}
+
+.timeline-item:nth-child(even){
+  left:50%;
+}
+
+/* CARD */
+
+.timeline-content{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  cursor:pointer;
+  transition:0.35s ease;
+  overflow:hidden;
+  position:relative;
+}
+
+.timeline-content:hover{
+  transform:translateY(-4px);
+}
+
+/* HEADER */
+
+.timeline-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+/* LOGO */
+
+.timeline-logo{
+  width:55px;
+  height:55px;
+  border-radius:14px;
+  background:#f3f4f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex-shrink:0;
+}
+
+.timeline-logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* TEXT */
+
+.timeline-info h3{
+  margin-bottom:4px;
+  color:#111827;
+}
+
+.timeline-info p{
+  margin-bottom:2px;
+  color:#4b5563;
+}
+
+.timeline-info small{
+  color:#6b7280;
+}
+
+/* DETAIL */
+
+.timeline-detail{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+  margin-top:0;
+  color:#4b5563;
+  font-size:15px;
+}
+
+.timeline-content.active .timeline-detail{
+  max-height:300px;
+  margin-top:18px;
+}
+
+/* EXPAND INFO */
+
+.expand-info{
+  margin-top:18px;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  color:#6b7280;
+}
+
+.expand-info svg{
+  width:14px;
+  height:14px;
+  transition:0.3s ease;
+}
+
+.timeline-content.active .expand-info svg{
+  transform:rotate(180deg);
+}
+
+/* ACTIVE */
+
+.timeline-content.active{
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+}
+
     /* SKILLS */
     .skills-grid{
       display:grid;
@@ -246,77 +494,39 @@
       margin-top:8px;
     }
 
-    /* EXPERIENCE */
-    .timeline{
-      position:relative;
-      max-width:800px;
-      margin:auto;
-    }
-
-    .timeline::before{
-      content:'';
-      position:absolute;
-      width:4px;
-      background:#2563eb;
-      top:0;
-      bottom:0;
-      left:50%;
-      transform:translateX(-50%);
-    }
-
-    .timeline-item{
-      padding:20px 40px;
-      position:relative;
-      width:50%;
-    }
-
-    .timeline-item:nth-child(odd){
-      left:0;
-    }
-
-    .timeline-item:nth-child(even){
-      left:50%;
-    }
-
-    .timeline-content{
-      background:white;
-      padding:25px;
-      border-radius:18px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.05);
-    }
-
     /* CONTACT */
-    .contact-box{
-      max-width:700px;
-      margin:auto;
-      background:white;
-      padding:40px;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.06);
-    }
 
-    .contact-box form{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
+.social-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
 
-    input, textarea{
-      padding:15px;
-      border-radius:12px;
-      border:1px solid #d1d5db;
-      font-family:inherit;
-    }
+.social-icon{
+  width:75px;
+  height:75px;
+  border-radius:22px;
+  background:white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 
-    textarea{
-      min-height:150px;
-      resize:none;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    button{
-      border:none;
-      cursor:pointer;
-    }
+  font-size:28px;
+  font-weight:700;
+  color:#2563eb;
+
+  transition:0.3s ease;
+}
+
+.social-icon:hover{
+  transform:translateY(-6px) scale(1.05);
+  background:#2563eb;
+  color:white;
+}
 
     /* FOOTER */
     footer{
@@ -365,13 +575,14 @@
   <!-- NAVBAR -->
   <nav>
     <div class="container nav-wrapper">
-      <div class="logo">Accounting Portfolio</div>
+      <div class="logo">2026 Portfolio</div>
 
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#software">Software Portfolio</a>
+        <a href="#education">Education</a>
         <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#software">Software</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -382,12 +593,14 @@
     <div class="container hero-content">
 
       <div class="hero-text">
-        <h1>Hello, I'm <span>Your Name</span></h1>
+        <h1>Hello, I'm <span>Yogi Fahreza Alfianto</span></h1>
 
         <p>
-          A Management graduate transitioning into Accounting & Finance,
-          passionate about financial reporting, bookkeeping,
-          data accuracy, and accounting software.
+          A fresh graduate with a Bachelor’s degree in Management from Universitas Mercu Buana
+	  I aspire to build a career in accounting and finance by utilizing my analytical mindset, attention to detail, and systematic way of working. 
+	  Backed by the academic foundation I developed during university, I am confident in my ability to support accounting and financial operations effectively. 
+	  To enhance my practical understanding, I participated in an accounting bootcamp centered on real-world business cases and accounting practices. 
+	  Through this experience, I developed hands-on knowledge of accounting processes and strengthened my skills in using accounting software such as Jurnal ID by Mekari, Zahir, and Accurate.
         </p>
 
         <a href="#" class="btn">Download CV</a>
@@ -436,6 +649,357 @@
 
     </div>
   </section>
+
+<!-- EDUCATION -->
+<section id="education">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Education</h2>
+      <p>Academic background and learning journey.</p>
+    </div>
+
+    <div class="education-wrapper">
+
+      <!-- EDUCATION 1 -->
+      <div class="education-card">
+
+        <div class="education-header">
+
+          <div class="education-left">
+
+            <div class="education-logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="University">
+            </div>
+
+            <div class="education-info">
+              <h3>Universitas Mercu Buana</h3>
+              <p>Bachelor's Degree in Management</p>
+              <small>2021 - 2025</small>
+            </div>
+
+          </div>
+
+          <div class="education-arrow">
+            ▼
+          </div>
+
+        </div>
+
+        <div class="education-detail">
+          <p>
+            Studied business management, financial management,
+            accounting fundamentals, and business analysis while
+            developing analytical thinking and structured problem-solving skills.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- EDUCATION 2 -->
+      <div class="education-card">
+
+        <div class="education-header">
+
+          <div class="education-left">
+
+            <div class="education-logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Bootcamp">
+            </div>
+
+            <div class="education-info">
+              <h3>Accounting Bootcamp</h3>
+              <p>Accounting & Finance Training</p>
+              <small>2025</small>
+            </div>
+
+          </div>
+
+          <div class="education-arrow">
+            ▼
+          </div>
+
+        </div>
+
+        <div class="education-detail">
+          <p>
+            Learned bookkeeping, journal entries, inventory management,
+            financial reporting, and accounting software implementation
+            using Mekari Jurnal, Accurate, and Zahir.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Experience</h2>
+      <p>Academic and professional journey.</p>
+    </div>
+
+    <div class="timeline">
+
+      <!-- ITEM 1 -->
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <div class="timeline-header">
+
+            <div class="timeline-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri">
+            </div>
+
+            <div class="timeline-info">
+              <h3>PT Bank Mandiri (Persero) Tbk.</h3>
+              <p>Marketing Intern</p>
+              <small>2024</small>
+            </div>
+
+          </div>
+
+          <div class="timeline-detail">
+            <p>
+              Supported marketing campaign execution and coordinated with
+              cross-functional teams to ensure alignment and smooth implementation.
+            </p>
+          </div>
+
+          <div class="expand-info">
+
+            <span>Click for more info</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+              <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"/>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <div class="timeline-header">
+
+            <div class="timeline-logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Bootcamp">
+            </div>
+
+            <div class="timeline-info">
+              <h3>Accounting Bootcamp</h3>
+              <p>Accounting & Finance Trainee</p>
+              <small>2025</small>
+            </div>
+
+          </div>
+
+          <div class="timeline-detail">
+            <p>
+              Learned accounting software implementation,
+              bookkeeping, inventory management,
+              and financial reporting practices.
+            </p>
+          </div>
+
+          <div class="expand-info">
+
+            <span>Click for more info</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+              <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"/>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- ITEM 3 -->
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <div class="timeline-header">
+
+            <div class="timeline-logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Bootcamp">
+            </div>
+
+            <div class="timeline-info">
+              <h3>Accounting Bootcamp</h3>
+              <p>Accounting & Finance Trainee</p>
+              <small>2025</small>
+            </div>
+
+          </div>
+
+          <div class="timeline-detail">
+            <p>
+              Learned accounting software implementation,
+              bookkeeping, inventory management,
+              and financial reporting practices.
+            </p>
+          </div>
+
+          <div class="expand-info">
+
+            <span>Click for more info</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+              <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"/>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- ITEM 2 -->
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <div class="timeline-header">
+
+            <div class="timeline-logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Bootcamp">
+            </div>
+
+            <div class="timeline-info">
+              <h3>Accounting Bootcamp</h3>
+              <p>Accounting & Finance Trainee</p>
+              <small>2025</small>
+            </div>
+
+          </div>
+
+          <div class="timeline-detail">
+            <p>
+              Learned accounting software implementation,
+              bookkeeping, inventory management,
+              and financial reporting practices.
+            </p>
+          </div>
+
+          <div class="expand-info">
+
+            <span>Click for more info</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+              <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"/>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<!-- ITEM 2 -->
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <div class="timeline-header">
+
+            <div class="timeline-logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Bootcamp">
+            </div>
+
+            <div class="timeline-info">
+              <h3>Accounting Bootcamp</h3>
+              <p>Accounting & Finance Trainee</p>
+              <small>2025</small>
+            </div>
+
+          </div>
+
+          <div class="timeline-detail">
+            <p>
+              Learned accounting software implementation,
+              bookkeeping, inventory management,
+              and financial reporting practices.
+            </p>
+          </div>
+
+          <div class="expand-info">
+
+            <span>Click for more info</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+              <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"/>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- SKILLS -->
   <section id="skills">
@@ -541,41 +1105,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Experience</h2>
-        <p>Academic and professional journey.</p>
-      </div>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <h3>PT Bank Mandiri (Persero) Tbk.</h3>
-            <p>Marketing Intern</p>
-            <small>2024</small>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <h3>Accounting Bootcamp</h3>
-            <p>
-              Learned accounting software implementation,
-              bookkeeping, and financial reporting practices.
-            </p>
-            <small>2025</small>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -587,15 +1116,40 @@
 
       <div class="contact-box">
 
-        <form>
-          <input type="text" placeholder="Your Name">
-          <input type="email" placeholder="Your Email">
-          <textarea placeholder="Your Message"></textarea>
+  <div class="contact-items">
 
-          <button class="btn">Send Message</button>
-        </form>
+    <div class="contact-box">
 
-      </div>
+  <div class="social-links">
+
+    <!-- EMAIL -->
+    <a href="mailto:yourmail@email.com" target="_blank" class="social-icon">
+      ✉
+    </a>
+
+    <!-- LINKEDIN -->
+    <a href="https://linkedin.com/in/yourlinkedin"
+       target="_blank"
+       class="social-icon">
+      in
+    </a>
+
+    <!-- INSTAGRAM -->
+    <a href="https://instagram.com/yourusername"
+       target="_blank"
+       class="social-icon">
+      ◎
+    </a>
+
+    <!-- PHONE -->
+    <a href="tel:+628123456789"
+       class="social-icon">
+      ☎
+    </a>
+
+  </div>
+
+</div>
 
     </div>
   </section>
@@ -605,5 +1159,38 @@
     <p>© 2026 Your Name | Accounting Portfolio</p>
   </footer>
 
+<script>
+
+  const timelineCards = document.querySelectorAll('.timeline-content');
+
+  timelineCards.forEach(card => {
+
+    card.addEventListener('click', () => {
+
+      card.classList.toggle('active');
+
+    });
+
+  });
+
+</script>
+
+<script>
+
+  // EDUCATION
+  const educationCards = document.querySelectorAll('.education-card');
+
+  educationCards.forEach(card => {
+
+    card.addEventListener('click', () => {
+
+      card.classList.toggle('active');
+
+    });
+
+  });
+
+</script>
+  
 </body>
 </html>
